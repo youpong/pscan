@@ -1,4 +1,8 @@
 use v5.38;
 
-my $content = do { local $/; <STDIN> };
-print $content;
+sub cat( $in, $out ) {
+    my $content = do { local $/; <$in> };
+    print $out $content;
+}
+
+cat( *STDIN, *STDOUT );
