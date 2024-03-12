@@ -1,5 +1,9 @@
 use v5.38;
 
-while ( defined( my $c = getc(STDIN) ) ) {
-    print STDOUT $c;
+sub cat ( $in, $out ) {
+    while ( defined( my $c = getc($in) ) ) {
+        print $out $c;
+    }
 }
+
+cat( *STDIN, *STDOUT );
