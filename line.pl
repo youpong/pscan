@@ -1,5 +1,9 @@
 use v5.38;
 
-while ( my $line = <STDIN> ) {
-    print $line;
+sub cat ( $in, $out ) {
+    while ( my $line = <$in> ) {
+        print $out $line;
+    }
 }
+
+cat( *STDIN, *STDOUT );
