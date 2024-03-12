@@ -1,5 +1,5 @@
 use v5.38;
 
-while ( my $line = <> ) {
+while ( my $line = <STDIN> ) {
     print $line;
 }
