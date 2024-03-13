@@ -8,4 +8,7 @@ sub cat ( $in, $out ) {
     }
 }
 
+# getc() returns a byte if the file handle's binmode is binary, otherwise it 
+# returns a single character.
+
 1;
