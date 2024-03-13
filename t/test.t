@@ -9,9 +9,9 @@ use File::Temp qw(tempfile);
 use File::Compare;
 
 my %srcs = (
-    'text.ascii'           => 'encoding(ISO-8859-1)',
-    'text.utf8'            => 'encoding(UTF-8)',
-    'Perl-camel-small.png' => ''
+    'text.ascii'           => 'encoding(ISO-8859-1)',    # text(ISO-8859-1)
+    'text.utf8'            => 'encoding(UTF-8)',         # text(UTF-8)
+    'Perl-camel-small.png' => ''                         # binary
 );
 my %impls = (
     'ByChar::cat' => \&ByChar::cat,
