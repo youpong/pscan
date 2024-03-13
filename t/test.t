@@ -10,12 +10,12 @@ use File::Compare;
 
 my @srcs  = qw(text.ascii text.utf8 Perl-camel-small.png );
 my %impls = (
-    'Bychar::cat' => \&ByChar::cat,
+    'ByChar::cat' => \&ByChar::cat,
     'ByLine::cat' => \&ByLine::cat,
     'ByFile::cat' => \&ByFile::cat
 );
 
-foreach my $src (@srcs) {
+foreach my $src (map { "t/$_" } @srcs) {
     foreach my $impl ( keys %impls ) {
         open my $in, "<", $src || die;
         my ( $out, $dest ) = tempfile();
