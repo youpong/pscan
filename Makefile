@@ -2,6 +2,6 @@
 clean:
 	rm *.bak
 format:
-	# to implement.
+	author/format.sh
 check:
 	carton exec prove -Ilib	

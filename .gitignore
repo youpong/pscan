@@ -1,2 +1,4 @@
+# Carton stores libraries for this project.
+local/
 # perltidy backup files
 *.bak

@@ -8,20 +8,21 @@ use Test::More;
 use File::Temp qw(tempfile);
 use File::Compare;
 
-my @srcs = qw(text.ascii text.utf8 Perl-camel-small.png );
-my %impls = ('Bychar::cat' => \&ByChar::cat, 
-    'ByLine::cat' => \&ByLine::cat, 
-    'ByFile::cat' => \&ByFile::cat);
+my @srcs  = qw(text.ascii text.utf8 Perl-camel-small.png );
+my %impls = (
+    'Bychar::cat' => \&ByChar::cat,
+    'ByLine::cat' => \&ByLine::cat,
+    'ByFile::cat' => \&ByFile::cat
+);
 
 foreach my $src (@srcs) {
-    foreach my $impl (keys %impls) {
+    foreach my $impl ( keys %impls ) {
         open my $in, "<", $src || die;
-        my ($out, $dest) = tempfile();
-        $impls{$impl}->($in, $out);
-    #    ByChar::cat($in, $out);
+        my ( $out, $dest ) = tempfile();
+        $impls{$impl}->( $in, $out );
         close $in;
         close $out;
-        is compare($src, $dest), 0, "impl: $impl, src: $src";
+        is compare( $src, $dest ), 0, "impl: $impl, src: $src";
     }
 }
 
