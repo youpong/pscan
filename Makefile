@@ -4,4 +4,4 @@ clean:
 format:
 	# to implement.
 check:
-	./test.sh
+	t/test.sh
