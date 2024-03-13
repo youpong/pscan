@@ -4,4 +4,4 @@ clean:
 format:
 	# to implement.
 check:
-	t/test.sh
+	carton exec prove -Ilib	
