@@ -7,5 +7,5 @@ on test => sub {
 };
 
 on develop => sub {
-    requires 'Perl::Tidy', '20240202';
+    requires 'Perl::Tidy', '== 20240202';
 };
